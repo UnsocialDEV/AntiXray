@@ -3,7 +3,7 @@ namespace AntiXray.Config;
 public sealed class AntiXrayConfig
 {
     public int HideAirExposedOreBelowY = 100;
-    public bool RevealOreOnProspectingPick = false;
+    public bool RevealOreOnProspectingPick = true;
     public int ProspectingPickRevealRadius = 8;
     public string[] ProspectingPickCodePatterns = ["prospectingpick-*"];
     public int BlockBreakRevealDistance = 3;
