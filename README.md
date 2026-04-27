@@ -215,8 +215,6 @@ There are no per-tick movement scans.
 
 When `RevealOreOnProspectingPick` is enabled, legitimate server-side prospecting pick use reveals hidden ore in a bounded radius around the prospected block.
 
-This is disabled by default because revealed ore becomes real ore in client-visible chunks and can then be seen by Block Overlay.
-
 ## Architecture
 
 The mod is intentionally split into focused services.
