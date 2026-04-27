@@ -1,0 +1,9 @@
+{
+  "type": "code",
+  "modid": "antixray",
+  "name": "AntiXray",
+  "authors": [ "UnsocialDEV" ],
+  "description": "Server-side anti-xray system that hides ore block data until legitimate exposure.",
+  "side": "Server",
+  "version": "1.0.0"
+}

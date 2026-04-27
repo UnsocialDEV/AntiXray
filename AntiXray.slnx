@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AntiXray/AntiXray.csproj" />
+  <Project Path="AntiXray.Tests/AntiXray.Tests.csproj" />
+</Solution>

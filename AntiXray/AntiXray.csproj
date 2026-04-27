@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>AntiXray</AssemblyName>
+    <RootNamespace>AntiXray</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(APPDATA)\VSLGameVersions\1.22.0\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="modinfo.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="assets\**\*" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <Target Name="PackageMod" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <PropertyGroup>
+      <ModPackageDir>$(MSBuildProjectDirectory)\bin\$(Configuration)\package\AntiXray</ModPackageDir>
+      <ModPackageZip>$(MSBuildProjectDirectory)\bin\$(Configuration)\AntiXray-$(Version).zip</ModPackageZip>
+    </PropertyGroup>
+    <RemoveDir Directories="$(ModPackageDir)" />
+    <MakeDir Directories="$(ModPackageDir)\assets" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModPackageDir)" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\modinfo.json" DestinationFolder="$(ModPackageDir)" />
+    <Copy SourceFiles="@(None)" DestinationFiles="@(None->'$(ModPackageDir)\%(RecursiveDir)%(Filename)%(Extension)')" Condition="$([System.String]::Copy('%(None.Identity)').StartsWith('assets\'))" />
+    <Delete Files="$(ModPackageZip)" />
+    <ZipDirectory SourceDirectory="$(ModPackageDir)" DestinationFile="$(ModPackageZip)" />
+  </Target>
+
+</Project>

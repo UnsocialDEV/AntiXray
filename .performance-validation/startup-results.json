@@ -1,0 +1,30 @@
+[
+  {
+    "Name": "baseline",
+    "Ready": true,
+    "Error": null,
+    "SecondsToReady": 19.33,
+    "Pid": 3332
+  },
+  {
+    "Name": "modded",
+    "Ready": true,
+    "Error": null,
+    "SecondsToReady": 20.27,
+    "Pid": 6004
+  },
+  {
+    "Name": "modded-reload",
+    "Ready": true,
+    "Error": null,
+    "SecondsToReady": 19.33,
+    "Pid": 16376
+  },
+  {
+    "Name": "existing-baseline-world-first-modded-load",
+    "Ready": true,
+    "Error": null,
+    "SecondsToReady": 20.33,
+    "Pid": 14848
+  }
+]
