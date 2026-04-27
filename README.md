@@ -88,7 +88,7 @@ Default config:
 ```json
 {
   "HideAirExposedOreBelowY": 100,
-  "RevealOreOnProspectingPick": false,
+  "RevealOreOnProspectingPick": true,
   "ProspectingPickRevealRadius": 8,
   "ProspectingPickCodePatterns": ["prospectingpick-*"],
   "BlockBreakRevealDistance": 3,
@@ -111,7 +111,7 @@ Default config:
 | Option | Default | Meaning |
 | --- | ---: | --- |
 | `HideAirExposedOreBelowY` | `100` | Air-exposed ore below this world Y is hidden during conversion. Air-exposed ore at or above this Y remains visible. Fully enclosed ore is hidden regardless of Y. |
-| `RevealOreOnProspectingPick` | `false` | Enables opt-in prospecting pick reveal support. This weakens anti-xray because revealed ore becomes real ore visible to clients. |
+| `RevealOreOnProspectingPick` | `true` | Enables opt-in prospecting pick reveal support. This weakens anti-xray because revealed ore becomes real ore visible to clients. |
 | `ProspectingPickRevealRadius` | `6` | Propick reveal radius, clamped by code to `0..8`. |
 | `ProspectingPickCodePatterns` | `["prospectingpick-*"]` | Item code patterns treated as prospecting picks. |
 | `BlockBreakRevealDistance` | `3` | Pre-break reveal seed distance, clamped to `1..3`. |
